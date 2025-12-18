@@ -17,7 +17,7 @@ export default function PCSCareWebsite() {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll('[id^="section-"]').forEach(el => {
+    document.querySelectorAll('section[id]').forEach(el => {
       observer.observe(el);
     });
 
@@ -444,7 +444,7 @@ export default function PCSCareWebsite() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className={`py-24 px-6 bg-gray-50 ${isVisible['section-services'] ? 'fade-in-up' : 'opacity-0'}`}>
+      <section id="services" className={`py-24 px-6 bg-gray-50 ${isVisible['services'] ? 'fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -460,7 +460,7 @@ export default function PCSCareWebsite() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`service-card hover-lift bg-white rounded-2xl p-8 shadow-lg cursor-pointer border-2 border-transparent hover:border-orange-500 transition-all ${isVisible['section-services'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
+                className={`service-card hover-lift bg-white rounded-2xl p-8 shadow-lg cursor-pointer border-2 border-transparent hover:border-orange-500 transition-all ${isVisible['services'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
                 onMouseEnter={() => setActiveService(index)}
                 onMouseLeave={() => setActiveService(null)}
               >
@@ -497,7 +497,7 @@ export default function PCSCareWebsite() {
       </section>
 
       {/* Cities Section */}
-      <section id="about" className={`py-24 px-6 bg-white ${isVisible['section-cities'] ? 'fade-in-up' : 'opacity-0'}`}>
+      <section id="about" className={`py-24 px-6 bg-white ${isVisible['about'] ? 'fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
             We Serve <span className="text-orange-600">Across India</span>
@@ -510,7 +510,7 @@ export default function PCSCareWebsite() {
             {cities.map((city, index) => (
               <div
                 key={index}
-                className={`hover-lift bg-white px-8 py-4 rounded-full shadow-lg font-semibold text-lg text-gray-800 border-2 border-orange-200 hover:border-orange-600 hover:bg-orange-50 transition-all ${isVisible['section-cities'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
+                className={`hover-lift bg-white px-8 py-4 rounded-full shadow-lg font-semibold text-lg text-gray-800 border-2 border-orange-200 hover:border-orange-600 hover:bg-orange-50 transition-all ${isVisible['about'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
               >
                 <MapPin className="inline-block w-5 h-5 mr-2 text-orange-600" />
                 {city}
@@ -521,7 +521,7 @@ export default function PCSCareWebsite() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="section-testimonials" className={`py-24 px-6 bg-gray-50 ${isVisible['section-testimonials'] ? 'fade-in-up' : 'opacity-0'}`}>
+      <section id="testimonials" className={`py-24 px-6 bg-gray-50 ${isVisible['testimonials'] ? 'fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -534,7 +534,7 @@ export default function PCSCareWebsite() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`hover-lift bg-white rounded-2xl p-8 shadow-lg border-l-4 border-orange-600 ${isVisible['section-testimonials'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
+                className={`hover-lift bg-white rounded-2xl p-8 shadow-lg border-l-4 border-orange-600 ${isVisible['testimonials'] ? 'scale-in stagger-' + (index + 1) : 'opacity-0'}`}
               >
                 <svg className="w-12 h-12 text-orange-200 mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -562,7 +562,7 @@ export default function PCSCareWebsite() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`py-24 px-6 bg-gradient-to-br from-gray-900 to-black text-white ${isVisible['section-contact'] ? 'fade-in-up' : 'opacity-0'}`}>
+      <section id="contact" className={`py-24 px-6 bg-gradient-to-br from-gray-900 to-black text-white ${isVisible['contact'] ? 'fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -577,7 +577,7 @@ export default function PCSCareWebsite() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['section-contact'] ? 'scale-in stagger-1' : 'opacity-0'}`}>
+              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['contact'] ? 'scale-in stagger-1' : 'opacity-0'}`}>
                 <a href="tel:+919876543210" className="contact-link flex items-start gap-4">
                   <div className="p-3 bg-orange-600 rounded-lg">
                     <Phone className="w-6 h-6" />
@@ -590,7 +590,7 @@ export default function PCSCareWebsite() {
                 </a>
               </div>
 
-              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['section-contact'] ? 'scale-in stagger-2' : 'opacity-0'}`}>
+              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['contact'] ? 'scale-in stagger-2' : 'opacity-0'}`}>
                 <a href="mailto:info@pcscare.in" className="contact-link flex items-start gap-4">
                   <div className="p-3 bg-orange-600 rounded-lg">
                     <Mail className="w-6 h-6" />
@@ -603,7 +603,7 @@ export default function PCSCareWebsite() {
                 </a>
               </div>
 
-              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['section-contact'] ? 'scale-in stagger-3' : 'opacity-0'}`}>
+              <div className={`hover-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 ${isVisible['contact'] ? 'scale-in stagger-3' : 'opacity-0'}`}>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-orange-600 rounded-lg">
                     <Clock className="w-6 h-6" />
@@ -618,7 +618,7 @@ export default function PCSCareWebsite() {
             </div>
 
             {/* Contact Form */}
-            <div className={`bg-white rounded-2xl p-8 shadow-2xl ${isVisible['section-contact'] ? 'scale-in stagger-4' : 'opacity-0'}`}>
+            <div className={`bg-white rounded-2xl p-8 shadow-2xl ${isVisible['contact'] ? 'scale-in stagger-4' : 'opacity-0'}`}>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
               <form className="space-y-4">
                 <input
